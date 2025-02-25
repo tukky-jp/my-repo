@@ -7,9 +7,8 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - uses: google-github-actions/auth@v2
+      - uses: google-github-actions/auth@v0
         with:
-          project_id: 'wacwac-staging'
           workload_identity_provider: 'projects/355206167652/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-oidc'
           service_account: 'git-hub-actions@wacwac-staging.iam.gserviceaccount.com'
 
