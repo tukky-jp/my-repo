@@ -1,8 +1,17 @@
 name: Hello
 on: push
 jobs:
-  hello:
+  gs-ls:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     steps:
-      - run: echo "Hello world"
-      - uses: actions/checkout@v4
+      - uses: google-github-actions/auth@v2
+        with:
+          project_id: 'my-project'
+          workload_identity_provider: 'https://iam.googleapis.com/projects/355206167652/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-oidc'
+          service_account: 'git-hub-actions@wacwac-staging.iam.gserviceaccount.com'
+
+      - run: gcloud storage ls gs://wacwac-staging-secret-store
+
