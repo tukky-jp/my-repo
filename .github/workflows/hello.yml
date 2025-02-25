@@ -15,3 +15,4 @@ jobs:
 
       - run: gcloud storage ls gs://wacwac-staging-secret-store
 
+
