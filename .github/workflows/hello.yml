@@ -15,4 +15,4 @@ jobs:
           service_account: 'git-hub-actions@wacwac-staging.iam.gserviceaccount.com'
       - uses: 'google-github-actions/setup-gcloud@v2'
       - run: gcloud info
-      - run: gcloud storage ls gs://wacwac-staging-secret-store
+      - run: gcloud run deploy --source .
