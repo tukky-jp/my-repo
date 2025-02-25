@@ -14,7 +14,7 @@ jobs:
           workload_identity_provider: 'projects/355206167652/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-oidc'
           service_account: 'git-hub-actions@wacwac-staging.iam.gserviceaccount.com'
       - run: cat $GOOGLE_APPLICATION_CREDENTIALS
-      - run: gcloud auth activate-service-account --key-file="$GOOGLE_APPLICATION_CREDENTIALS"
+      - run: gcloud auth print-identity-token
       - run: gcloud auth list 
       - run: gcloud storage ls gs://wacwac-staging-secret-store
 
