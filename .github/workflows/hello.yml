@@ -11,6 +11,7 @@ jobs:
         with:
           workload_identity_provider: 'projects/355206167652/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-oidc'
           service_account: 'git-hub-actions@wacwac-staging.iam.gserviceaccount.com'
+          create_credentials_file: false
 
       - run: gcloud storage ls gs://wacwac-staging-secret-store
 
