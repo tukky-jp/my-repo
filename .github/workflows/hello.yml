@@ -15,4 +15,4 @@ jobs:
           service_account: 'git-hub-actions@wacwac-staging.iam.gserviceaccount.com'
       - uses: 'google-github-actions/setup-gcloud@v2'
       - run: gcloud info
-      - run: gcloud run deploy github-action-svc --source . --region asia-notheast1
+      - run: gcloud run deploy github-action-svc --source . --region asia-northeast1
